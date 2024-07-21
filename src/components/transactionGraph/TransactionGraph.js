@@ -17,11 +17,16 @@ const TransactionGraph = ({ transactions }) => {
   }));
 
   if (data.length === 0) {
-    return <div>No transactions available for the selected customer.</div>;
+    return (
+      <div className="text-center text-gray-500 my-10">
+        No transactions available for the selected customer.
+      </div>
+    );
   }
 
   return (
-    <div className="container mx-auto my-10">
+    <div className="container mx-auto my-10 p-4 bg-white rounded-lg shadow-lg">
+      <h2 className="text-2xl font-bold mb-4 text-center text-blue-500">Transaction History</h2>
       <ResponsiveContainer width="100%" height={400}>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
