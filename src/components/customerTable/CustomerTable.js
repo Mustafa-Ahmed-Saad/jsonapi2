@@ -10,7 +10,7 @@ function CustomerTable({ customers, transactions, setSelectedCustomer }) {
   useEffect(() => {
     const data = customers.map((customer) => {
       const transactionsData = transactions.filter(
-        (transaction) => transaction?.customer_id === customer?.id
+        (transaction) => transaction?.customer_id.toString() === customer?.id.toString()
       );
       return { customerInfo: customer, customerTransactions: transactionsData };
     });
@@ -19,10 +19,15 @@ function CustomerTable({ customers, transactions, setSelectedCustomer }) {
     setDataToShow(data);
   }, [customers, transactions]);
 
+
+
+
   useEffect(() => {
     filterData(filterName, filterAmount, targetData, setDataToShow);
   }, [filterName, filterAmount, targetData]);
 
+
+  console.log(dataToShow)
   return (
     <div className="container mx-auto p-4">
       {/* Start filter */}
