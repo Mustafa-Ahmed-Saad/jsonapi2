@@ -13,6 +13,7 @@ function App() {
 
   return (
     <div className="App">
+      <h2 className="mt-5 text-3xl">Customer Transactions</h2>
       <CustomerTable
         customers={customers}
         transactions={transactions}
